@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Table inset="false" width="auto" class="sapUiResponsiveMargin" noDataText="No se han agregado sociedades">
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="Sociedades" level="H2"/>
+                <ToolbarSpacer/>
+                <Button id="btnAddSociedad" icon="sap-icon://add" press=".onOpenAddProgramsDialog"/>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="Sociedad" />
+            </Column>
+            <Column>
+                <Text text="Descripción" />
+            </Column>
+            <Column hAlign="Right" visible="{= ${EditModel>/editMode} }"/>
+        </columns>
+
+        <items>
+            <ColumnListItem vAlign="Middle">
+                <cells>
+                    <Text text="{Programas>sociedad}" />
+                    <Text text="{Programas>descripcion}" />
+
+                    <Button id="btnDeleteSociedad" icon="sap-icon://delete" type="Transparent" press=".onDeleteRow"/>
+
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

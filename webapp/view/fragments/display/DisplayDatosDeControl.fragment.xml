@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <f:SimpleForm
+        editable="false"
+        width="auto"
+        class="sapUiResponsiveMargin"
+        title="Datos de Control"
+        labelSpanXL="4"
+        labelSpanL="6"
+        labelSpanM="6"
+        labelSpanS="6"
+        adjustLabelSpan="true"
+        emptySpanXL="0"
+        emptySpanL="0"
+        emptySpanM="0"
+        emptySpanS="0"
+        columnsXL="2"
+        columnsL="2"
+        columnsM="2"
+        singleContainerFullSize="true" >
+
+        <f:content>
+            <!-- ========================= -->
+            <!-- Control de Cuenta -->
+            <!-- ========================= -->
+
+            <Toolbar>
+                <Title text="Control de Cuenta en Sociedad"/>
+            </Toolbar>
+
+            <Label text="Moneda de la Cuenta"/>
+            <Text text="MXN - Pesos" />
+
+            <Label text="Saldos en Moneda Local"/>
+            <Text text="Sí" />
+
+            <Label text="Categoría Fiscal"/>
+            <Text text="Impuestos" />
+
+            <Label text="Permitir Contab. Sin IVA"/>
+            <Text text="No" />
+
+            <Label text="Cta. Asociada p/Clas Cta"/>
+            <Text text="D - Deudores" />
+
+            <!-- ========================= -->
+            <!-- Gestión de Cuenta -->
+            <!-- ========================= -->
+
+            <Toolbar>
+                <Title text="Gestión de Cta en Sociedad"/>
+            </Toolbar>
+
+            <Label text="Gestión Partidas Abiertas"/>
+            <Text text="Sí" />
+
+            <Label text="Visualización Partidas Indiv."/>
+            <Text text="Sí" />
+
+            <Label text="Clave Clasificación"/>
+            <Text text="001 - Posting Date" />
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

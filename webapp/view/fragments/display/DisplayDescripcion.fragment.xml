@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+        <f:SimpleForm
+			width="auto"
+			editable="false"
+			class="sapUiResponsiveMargin"
+			layout="ResponsiveGridLayout"
+			title="Tipo/Descripción"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Grupo de Cuentas" />
+				<Text text="202 - Impuestos por Pagar" />
+
+				<Label text="Cta Beneficios / Cta Balance" />
+				<Text text="Balance" />
+
+				<Label text="Sociedad GL Asociada" />
+				<Text text="4000 - Intercarnes" />
+
+				<Label text="No.Cuenta de Grupo" />
+				<Text text="200310 - IVA por pagar" />
+			</f:content>
+		</f:SimpleForm>
+</core:FragmentDefinition>

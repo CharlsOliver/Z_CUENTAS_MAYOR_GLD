@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <f:SimpleForm
+        width="auto"
+        class="sapUiResponsiveMargin"
+        layout="ColumnLayout"
+        title="Datos de Control" >
+        <f:content>
+            <!-- ========================= -->
+            <!-- Control de Cuenta -->
+            <!-- ========================= -->
+
+            <Toolbar>
+                <Title text="Control de Cuenta en Sociedad"/>
+            </Toolbar>
+
+            <Label text="Moneda de la Cuenta"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Saldos en Moneda Local"/>
+            <CheckBox/>
+
+            <Label text="Categoría Fiscal"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Permitir Contab. Sin IVA"/>
+            <CheckBox/>
+
+            <Label text="Cta. Asociada p/Clas Cta"/>
+            <Input showValueHelp="true"/>
+
+            <!-- ========================= -->
+            <!-- Gestión de Cuenta -->
+            <!-- ========================= -->
+
+            <Toolbar>
+                <Title text="Gestión de Cta en Sociedad"/>
+            </Toolbar>
+
+            <Label text="Gestión Partidas Abiertas"/>
+            <CheckBox/>
+
+            <Label text="Visualización Partidas Indiv."/>
+            <CheckBox/>
+
+            <Label text="Clave Clasificación"/>
+            <Input showValueHelp="true"/>
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

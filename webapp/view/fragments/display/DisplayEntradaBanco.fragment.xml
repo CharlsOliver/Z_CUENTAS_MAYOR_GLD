@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <f:SimpleForm
+        width="auto"
+        editable="false"
+        class="sapUiResponsiveMargin"
+        layout="ResponsiveGridLayout"
+        title="Entrada Banco/Inter."
+        labelSpanXL="4"
+        labelSpanL="5"
+        labelSpanM="5"
+        labelSpanS="6"
+        adjustLabelSpan="true"
+        emptySpanXL="0"
+        emptySpanL="0"
+        emptySpanM="0"
+        emptySpanS="0"
+        columnsXL="2"
+        columnsL="2"
+        columnsM="2"
+        singleContainerFullSize="false" >
+        <f:content>
+            <!-- ===================================== -->
+            <!-- Control De Entrada de Doc en Sociedad -->
+            <!-- ===================================== -->
+
+            <Toolbar>
+                <Title text="Control De Entrada de Doc en Sociedad"/>
+            </Toolbar>
+
+            <Label text="Grupo Estatus Campos"/>
+            <Text text="G001 -Generales (con texto, asignación)" />
+
+            <Label text="Solo Contab.Automaticamente"/>
+            <Text text="Sí" />
+
+            <!-- =========================== -->
+            <!-- Datos Bancarios/Financieros -->
+            <!-- =========================== -->
+
+            <Toolbar>
+                <Title text="Datos Bancarios/Financieros"/>
+            </Toolbar>
+
+            <Label text="Nivel de Tesoreria"/>
+            <Text text="A4 - Traspasos Bancarios" />
+
+            <Label text="Relevante Mov.Caja"/>
+            <Text text="Sí" />
+
+            <Label text="Pos. Presupuestaria"/>
+            <Text text="BANCOS - Bancos" />
+
+            <Label text="Banco Propio"/>
+            <Text text="BBV01" />
+
+            <Label text="Id de Banco Propio"/>
+            <Text text="96468 - BBVA Bancomer MXN Intercarnes SA de CV  96468" />
+
+            <Label text="Cuenta Bancaria"/>
+            <Text text="1100078195" />
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

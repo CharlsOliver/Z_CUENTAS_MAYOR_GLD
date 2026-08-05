@@ -1,0 +1,43 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+
+    <f:SimpleForm
+        width="auto"
+        editable="false"
+        layout="ResponsiveGridLayout"
+        class="sapUiResponsiveMargin"
+        title="Bloqueos"
+        labelSpanXL="6"
+        labelSpanL="6"
+        labelSpanM="4"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="0"
+        emptySpanL="0"
+        emptySpanM="0"
+        emptySpanS="0"
+        columnsXL="2"
+        columnsL="2"
+        columnsM="2"
+        singleContainerFullSize="false" >
+        <f:content>
+            <core:Title text="Bloquear" />
+            <Label text="Bloqueada para Creacion" />
+            <Text text="Sí" />
+            <Label text="Bloqueada para Contabilizacion" />
+            <Text text="Sí" />
+            <Label text="Bloqueada para Planificacion" />
+            <Text text="No" />
+
+            <core:Title text="Bloqueo en Sociedad" />
+            <Label text="Bloqueo para Contabilidad" />
+            <Text text="Sí" />
+
+            <core:Title text="Información Adicional" />
+            <Label text="Motivo de Bloqueo" />
+            <Text text="Se va a Bloquear por Algun Motivo." />
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

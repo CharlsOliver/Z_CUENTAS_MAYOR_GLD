@@ -1,0 +1,32 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+        <f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			width="auto"
+			layout="ResponsiveGridLayout"
+            class="sapUiResponsiveMargin"
+			title="Con Modelo de Cuenta de Mayor"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="No. de Cuenta" />
+				<Input width="auto" showValueHelp="true" />
+
+				<Label text="Sociedad" />
+				<Input width="auto" showValueHelp="true" />
+			</f:content>
+		</f:SimpleForm>
+</core:FragmentDefinition>

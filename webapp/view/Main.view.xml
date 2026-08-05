@@ -1,0 +1,70 @@
+<mvc:View controllerName="zcuentasmayorgld.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.Options" type="XML"/>
+
+            <VBox id="boxChangeCuentaMayor">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ChangeCuentaDeMayor" type="XML"/>
+            </VBox>
+
+            <VBox id="boxDisplayCuentaMayor">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.display.DisplayCuentaDeMayor" type="XML"/>
+            </VBox>
+
+            <VBox id="boxModeloCuenta">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ModeloDeCuenta" type="XML"/>
+            </VBox>
+
+            <VBox id="boxChangeDescripcion">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ChangeDescripcion" type="XML"/>
+            </VBox>
+
+            <VBox id="boxDisplayDescripcion">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.display.DisplayDescripcion" type="XML"/>
+            </VBox>
+
+            <VBox id="boxChangeDatosControl">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ChangeDatosDeControl" type="XML"/>
+            </VBox>
+
+            <VBox id="boxDisplayDatosControl">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.display.DisplayDatosDeControl" type="XML"/>
+            </VBox>
+
+            <VBox id="boxChangeEntradaBanco">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ChangeEntradaBanco" type="XML"/>
+            </VBox>
+
+            <VBox id="boxDisplayEntradaBanco">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.display.DisplayEntradaBanco" type="XML"/>
+            </VBox>
+
+            <VBox id="boxChangeBloqueos">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ChangeBloqueos" type="XML"/>
+            </VBox>
+
+            <VBox id="boxDisplayBloqueos">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.display.DisplayBloqueos" type="XML"/>
+            </VBox>
+
+            <VBox id="boxSociedades">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.TableSociedades" type="XML"/>
+            </VBox>
+        </content>
+        <footer>
+            <OverflowToolbar id="otbFooter">
+                <ToolbarSpacer/>
+
+                <Button id="btnCreate" type="Accept" text="Crear"/>
+
+                <Button id="btnSave" type="Accept" text="Guardar"/>
+
+                <Button id="btnCancel" type="Reject" text="Cancelar"/>
+
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

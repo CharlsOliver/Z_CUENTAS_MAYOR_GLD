@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+        <f:SimpleForm
+            width="auto"
+            class="sapUiResponsiveMargin"
+			layout="ColumnLayout"
+			title="Cuenta de Mayor" >
+			<f:content>
+				<Label text="No. de Cuenta" />
+				<Input showValueHelp="true" />
+
+				<Label text="Sociedad" />
+				<Input showValueHelp="true" />
+
+				<Label text="Texto Breve" />
+				<Text text="IEPS pendiente Pagar" />
+
+				<Label text="Texto Explicativo" />
+				<Text text="IEPS pendiente Pagar" />
+			</f:content>
+		</f:SimpleForm>
+</core:FragmentDefinition>

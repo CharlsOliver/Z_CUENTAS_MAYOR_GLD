@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Panel width="auto" class="sapUiResponsiveMargin">
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="Opciones"/>
+                <ToolbarSpacer/>
+                <Button id="btnEdit" icon="sap-icon://edit" type="Transparent" press=".onEditPress"/>
+            </OverflowToolbar>
+        </headerToolbar>
+        <content>
+            <RadioButtonGroup columns="4" selectedIndex="0" select=".onOptionSelect">
+                <buttons>
+                    <RadioButton text="Alta de Cuenta" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="Modificación de Cuenta" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="Bloqueo de Cuenta" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="Extensión de Cuenta" class='sapUiMediumMarginEnd'/>
+                </buttons>
+            </RadioButtonGroup>
+        </content>
+    </Panel>
+</core:FragmentDefinition>

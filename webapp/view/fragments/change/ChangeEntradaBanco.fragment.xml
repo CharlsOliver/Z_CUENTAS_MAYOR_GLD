@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <f:SimpleForm
+        width="auto"
+        class="sapUiResponsiveMargin"
+        layout="ColumnLayout"
+        title="Entrada Banco/Inter." >
+        <f:content>
+            <!-- ===================================== -->
+            <!-- Control De Entrada de Doc en Sociedad -->
+            <!-- ===================================== -->
+
+            <Toolbar>
+                <Title text="Control De Entrada de Doc en Sociedad"/>
+            </Toolbar>
+
+            <Label text="Grupo Estatus Campos"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Solo Contab.Automaticamente"/>
+            <CheckBox/>
+
+            <!-- =========================== -->
+            <!-- Datos Bancarios/Financieros -->
+            <!-- =========================== -->
+
+            <Toolbar>
+                <Title text="Datos Bancarios/Financieros"/>
+            </Toolbar>
+
+            <Label text="Nivel de Tesoreria"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Relevante Mov.Caja"/>
+            <CheckBox/>
+
+            <Label text="Pos. Presupuestaria"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Banco Propio"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Id de Banco Propio"/>
+            <Input showValueHelp="true"/>
+
+            <Label text="Cuenta Bancaria"/>
+            <Input/>
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>
