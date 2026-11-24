@@ -1,14 +1,10 @@
-<core:FragmentDefinition
-    xmlns="sap.m"
+<core:FragmentDefinition xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
 
-    <f:SimpleForm
-        width="auto"
-        class="sapUiResponsiveMargin"
-        layout="ColumnLayout"
-        title="Datos de Control" >
+    <f:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ColumnLayout" title="Datos de Control">
+
         <f:content>
             <!-- ========================= -->
             <!-- Control de Cuenta -->
@@ -19,19 +15,46 @@
             </Toolbar>
 
             <Label text="Moneda de la Cuenta"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputMonedaCuenta"
+                value="{parts: ['CuentaMayorData>/WAERS', {path: 'descripcionesCatalogo>/15', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="15"/>
+                    <core:CustomData key="campoSAP" value="WAERS"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/WAERS}"/>
+                </customData>
+            </Input>
 
             <Label text="Saldos en Moneda Local"/>
-            <CheckBox/>
+            <CheckBox selected="{CuentaMayorData>/XSALH}"/>
 
             <Label text="Categoría Fiscal"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputCategoriaFiscal"
+                value="{parts: ['CuentaMayorData>/MWSKZ', {path: 'descripcionesCatalogo>/16', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="16"/>
+                    <core:CustomData key="campoSAP" value="MWSKZ"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/MWSKZ}"/>
+                </customData>
+            </Input>
 
             <Label text="Permitir Contab. Sin IVA"/>
-            <CheckBox/>
+            <CheckBox selected="{CuentaMayorData>/XMWNO}"/>
 
             <Label text="Cta. Asociada p/Clas Cta"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputCtaAsociadaClasCta"
+                value="{parts: ['CuentaMayorData>/MITKZ', {path: 'descripcionesCatalogo>/17', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="17"/>
+                    <core:CustomData key="campoSAP" value="MITKZ"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/MITKZ}"/>
+                </customData>
+            </Input>
 
             <!-- ========================= -->
             <!-- Gestión de Cuenta -->
@@ -42,13 +65,23 @@
             </Toolbar>
 
             <Label text="Gestión Partidas Abiertas"/>
-            <CheckBox/>
+            <CheckBox selected="{CuentaMayorData>/XOPVW}"/>
 
             <Label text="Visualización Partidas Indiv."/>
-            <CheckBox/>
+            <CheckBox selected="{CuentaMayorData>/XKRES}"/>
 
             <Label text="Clave Clasificación"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputClaveClasificacion"
+                value="{parts: ['CuentaMayorData>/ZUAWA', {path: 'descripcionesCatalogo>/18', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="18"/>
+                    <core:CustomData key="campoSAP" value="ZUAWA"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/ZUAWA}"/>
+                </customData>
+            </Input>
         </f:content>
+
     </f:SimpleForm>
 </core:FragmentDefinition>

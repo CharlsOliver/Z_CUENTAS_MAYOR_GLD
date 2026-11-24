@@ -1,14 +1,10 @@
-<core:FragmentDefinition
-    xmlns="sap.m"
+<core:FragmentDefinition xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
 
-    <f:SimpleForm
-        width="auto"
-        class="sapUiResponsiveMargin"
-        layout="ColumnLayout"
-        title="Entrada Banco/Inter." >
+    <f:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ColumnLayout" title="Entrada Banco/Inter.">
+
         <f:content>
             <!-- ===================================== -->
             <!-- Control De Entrada de Doc en Sociedad -->
@@ -19,10 +15,19 @@
             </Toolbar>
 
             <Label text="Grupo Estatus Campos"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputGrupoEstatusCampos"
+                value="{parts: ['CuentaMayorData>/FSTAG', {path: 'descripcionesCatalogo>/19', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="19"/>
+                    <core:CustomData key="campoSAP" value="FSTAG"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/FSTAG}"/>
+                </customData>
+            </Input>
 
             <Label text="Solo Contab.Automaticamente"/>
-            <CheckBox/>
+            <CheckBox selected="{CuentaMayorData>/XINTB}"/>
 
             <!-- =========================== -->
             <!-- Datos Bancarios/Financieros -->
@@ -33,22 +38,59 @@
             </Toolbar>
 
             <Label text="Nivel de Tesoreria"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputNivelTesoreria"
+                value="{parts: ['CuentaMayorData>/FDLEV', {path: 'descripcionesCatalogo>/20', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="20"/>
+                    <core:CustomData key="campoSAP" value="FDLEV"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/FDLEV}"/>
+                </customData>
+            </Input>
 
             <Label text="Relevante Mov.Caja"/>
             <CheckBox/>
 
             <Label text="Pos. Presupuestaria"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputPosPresupuestaria"
+                value="{parts: ['CuentaMayorData>/FIPOS', {path: 'descripcionesCatalogo>/21', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="21"/>
+                    <core:CustomData key="campoSAP" value="FIPOS"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/FIPOS}"/>
+                </customData>
+            </Input>
 
             <Label text="Banco Propio"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputBancoPropio"
+                value="{parts: ['CuentaMayorData>/HBKID', {path: 'descripcionesCatalogo>/22', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="22"/>
+                    <core:CustomData key="campoSAP" value="HBKID"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/HBKID}"/>
+                </customData>
+            </Input>
 
             <Label text="Id de Banco Propio"/>
-            <Input showValueHelp="true"/>
+            <Input id="inputIdBancoPropio"
+                value="{parts: ['CuentaMayorData>/HKTID', {path: 'descripcionesCatalogo>/23', targetType: 'any'}], formatter: '.formatCatalogo'}"
+                change=".onCampoCatalogoChange"
+                showValueHelp="true" valueHelpRequest=".onCatalogoValueHelp">
+                <customData>
+                    <core:CustomData key="catalogo" value="23"/>
+                    <core:CustomData key="campoSAP" value="HKTID"/>
+                    <core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/HKTID}"/>
+                </customData>
+            </Input>
 
             <Label text="Cuenta Bancaria"/>
             <Input/>
         </f:content>
+
     </f:SimpleForm>
 </core:FragmentDefinition>

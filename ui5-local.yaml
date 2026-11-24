@@ -24,8 +24,13 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: zcuentasmayorgld
-        ui5Theme: sap_horizon
+        ui5Theme: sap_fiori_3
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        debug: false
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: http://svgwdap0.grupobafar.com:8000/
+            client: "100"

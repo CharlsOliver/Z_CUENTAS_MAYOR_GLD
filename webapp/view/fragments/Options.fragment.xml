@@ -9,9 +9,10 @@
             </OverflowToolbar>
         </headerToolbar>
         <content>
-            <RadioButtonGroup columns="4" selectedIndex="0" select=".onOptionSelect">
+            <RadioButtonGroup columns="5" selectedIndex="0" select=".onOptionSelect">
                 <buttons>
                     <RadioButton text="Alta de Cuenta" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="Alta de Cuentas de Banco" class='sapUiMediumMarginEnd'/>
                     <RadioButton text="Modificación de Cuenta" class='sapUiMediumMarginEnd'/>
                     <RadioButton text="Bloqueo de Cuenta" class='sapUiMediumMarginEnd'/>
                     <RadioButton text="Extensión de Cuenta" class='sapUiMediumMarginEnd'/>

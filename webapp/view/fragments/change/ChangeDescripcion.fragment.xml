@@ -9,19 +9,66 @@
 			title="Tipo/Descripción" >
 			<f:content>
 				<Label text="Grupo de Cuentas" />
-				<Input showValueHelp="true"/>
+				<Input
+					id="inputGrupoCuentas"
+					value="{parts: ['CuentaMayorData>/KTOKS', {path: 'descripcionesCatalogo>/11', targetType: 'any'}], formatter: '.formatCatalogo'}"
+					change=".onCampoCatalogoChange"
+					showValueHelp="true"
+					valueHelpRequest=".onCatalogoValueHelp">
+					<customData>
+						<core:CustomData key="catalogo" value="11"/>
+						<core:CustomData key="campoSAP" value="KTOKS"/>
+						<core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/KTOKS}"/>
+					</customData>
+				</Input>
 
 				<Label text="Cta Beneficios / Cta Balance" />
-				<Select forceSelection="true">
-					<core:ListItem key="Beneficios" text="Beneficios" />
-					<core:ListItem key="Balance" text="Balance" />
+				<Select
+					id="inputCtaBeneficiosBalance"
+					forceSelection="false"
+					selectedKey="{CuentaMayorData>/GVTYP}"
+					items="{
+						path: 'ZSERV_GLD_SHELP_SRV>/InputSet',
+						filters: [
+							{
+								path: 'Campo',
+								operator: 'EQ',
+								value1: '12'
+							}
+						]
+					}">
+					<core:Item
+						key="{ZSERV_GLD_SHELP_SRV>Valor}"
+						text="{ZSERV_GLD_SHELP_SRV>Descripcion}"/>
 				</Select>
 
 				<Label text="Sociedad GL Asociada" />
-				<Input showValueHelp="true"/>
+				<Input
+					id="inputSociedadGLAsociada"
+					value="{parts: ['CuentaMayorData>/VBUND', {path: 'descripcionesCatalogo>/13', targetType: 'any'}], formatter: '.formatCatalogo'}"
+					change=".onCampoCatalogoChange"
+					showValueHelp="true"
+					valueHelpRequest=".onCatalogoValueHelp">
+					<customData>
+						<core:CustomData key="catalogo" value="13"/>
+						<core:CustomData key="campoSAP" value="VBUND"/>
+						<core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/VBUND}"/>
+					</customData>
+				</Input>
 
 				<Label text="No.Cuenta de Grupo" />
-				<Input showValueHelp="true"/>
+				<Input
+					id="inputNumeroCuentaGrupo"
+					value="{parts: ['CuentaMayorData>/BILKT', {path: 'descripcionesCatalogo>/14', targetType: 'any'}], formatter: '.formatCatalogo'}"
+					change=".onCampoCatalogoChange"
+					showValueHelp="true"
+					valueHelpRequest=".onCatalogoValueHelp">
+					<customData>
+						<core:CustomData key="catalogo" value="14"/>
+						<core:CustomData key="campoSAP" value="BILKT"/>
+						<core:CustomData key="valorSeleccionado" value="{CuentaMayorData>/clavesCatalogo/BILKT}"/>
+					</customData>
+				</Input>
 			</f:content>
 		</f:SimpleForm>
 </core:FragmentDefinition>

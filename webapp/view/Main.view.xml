@@ -6,16 +6,16 @@
         <content>
             <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.Options" type="XML"/>
 
+            <VBox id="boxModeloCuenta">
+                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ModeloDeCuenta" type="XML"/>
+            </VBox>
+
             <VBox id="boxChangeCuentaMayor">
                 <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ChangeCuentaDeMayor" type="XML"/>
             </VBox>
 
             <VBox id="boxDisplayCuentaMayor">
                 <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.display.DisplayCuentaDeMayor" type="XML"/>
-            </VBox>
-
-            <VBox id="boxModeloCuenta">
-                <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.change.ModeloDeCuenta" type="XML"/>
             </VBox>
 
             <VBox id="boxChangeDescripcion">
@@ -60,9 +60,9 @@
 
                 <Button id="btnCreate" type="Accept" text="Crear"/>
 
-                <Button id="btnSave" type="Accept" text="Guardar"/>
+                <Button id="btnSave" type="Accept" text="Guardar" press=".onSavePress"/>
 
-                <Button id="btnCancel" type="Reject" text="Cancelar"/>
+                <Button id="btnCancel" type="Reject" text="Cancelar" press=".onCancelPress"/>
 
             </OverflowToolbar>
         </footer>

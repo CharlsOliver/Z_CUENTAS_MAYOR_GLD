@@ -9,16 +9,34 @@
 			title="Cuenta de Mayor" >
 			<f:content>
 				<Label text="No. de Cuenta" />
-				<Input showValueHelp="true" />
+				<Input
+					id="inputCuentaMayor"
+					width="auto"
+					showValueHelp="true"
+					valueHelpRequest=".onCatalogoValueHelp">
+					<customData>
+						<core:CustomData key="catalogo" value="7"/>
+						<core:CustomData key="valorSeleccionado" value=""/>
+					</customData>
+				</Input>
 
 				<Label text="Sociedad" />
-				<Input showValueHelp="true" />
+				<Input
+					id="inputSociedad"
+					width="auto"
+					showValueHelp="true"
+					valueHelpRequest=".onCatalogoValueHelp">
+					<customData>
+						<core:CustomData key="catalogo" value="8"/>
+						<core:CustomData key="valorSeleccionado" value=""/>
+					</customData>
+				</Input>
 
 				<Label text="Texto Breve" />
-				<Input />
+				<Input value="{CuentaMayorData>/TXT20}"/>
 
 				<Label text="Texto Explicativo" />
-				<Input />
+				<Input value="{CuentaMayorData>/TXT50}"/>
 			</f:content>
 		</f:SimpleForm>
 </core:FragmentDefinition>

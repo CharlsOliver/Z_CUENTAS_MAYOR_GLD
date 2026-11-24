@@ -14,6 +14,26 @@
             "id": "@sap/generator-fiori:basic",
             "version": "1.16.5",
             "toolsId": "b5f51427-0328-423d-b665-7b36ea47cd74"
+        },
+        "dataSources": {
+            "ZSERV_GLD_CTAGL_SRV": {
+                "uri": "/sap/opu/odata/sap/ZSERV_GLD_CTAGL_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/ZSERV_GLD_CTAGL_SRV/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "ZSERV_GLD_SHELP_SRV": {
+                "uri": "/sap/opu/odata/sap/ZSERV_GLD_SHELP_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/ZSERV_GLD_SHELP_SRV/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
         }
     },
     "sap.ui": {
@@ -35,10 +55,11 @@
     "sap.ui5": {
         "flexEnabled": false,
         "dependencies": {
-            "minUI5Version": "1.150.1",
+            "minUI5Version": "1.71.16",
             "libs": {
                 "sap.m": {},
-                "sap.ui.core": {}
+                "sap.ui.core": {},
+                "sap.ui.layout": {}
             }
         },
         "contentDensities": {
@@ -51,6 +72,18 @@
                 "settings": {
                     "bundleName": "zcuentasmayorgld.i18n.i18n"
                 }
+            },
+            "ZSERV_GLD_CTAGL_SRV": {
+                "dataSource": "ZSERV_GLD_CTAGL_SRV",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "ZSERV_GLD_SHELP_SRV": {
+                "dataSource": "ZSERV_GLD_SHELP_SRV",
+                "preload": true,
+                "settings": {}
             }
         },
         "resources": {

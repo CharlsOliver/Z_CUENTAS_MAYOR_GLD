@@ -1,0 +1,12 @@
+{ 
+    "base": "./dist", 
+    "conn_usestrictssl" : false, 
+    "conn_server": "http://svgwdap0.grupobafar.com:8000/", 
+    "conn_client" : "100", 
+    "conn_user": "RUVERA", 
+    "conn_password": "Noviembre2.2026", 
+    "abap_package": "ZBAFAR_FIORI", 
+    "abap_bsp": "ZCUENTAS_GLD", 
+    "abap_bsp_text": "Creación de Cuentas de Mayor", 
+    "abap_transport":"GWDK905364" 
+}
