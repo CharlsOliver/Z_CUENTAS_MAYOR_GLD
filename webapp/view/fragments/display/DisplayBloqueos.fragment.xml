@@ -8,7 +8,7 @@
         editable="false"
         layout="ResponsiveGridLayout"
         class="sapUiResponsiveMargin"
-        title="Bloqueos"
+        title="{i18n>blocksTitle}"
         labelSpanXL="6"
         labelSpanL="6"
         labelSpanM="4"
@@ -23,21 +23,21 @@
         columnsM="2"
         singleContainerFullSize="false" >
         <f:content>
-            <core:Title text="Bloquear" />
-            <Label text="Bloqueada para Creacion" />
-            <Text text="Sí" />
-            <Label text="Bloqueada para Contabilizacion" />
-            <Text text="Sí" />
-            <Label text="Bloqueada para Planificacion" />
-            <Text text="No" />
+            <core:Title text="{i18n>blockTitle}" />
+            <Label text="{i18n>blockedForCreationLabel}" />
+            <Text />
+            <Label text="{i18n>blockedForPostingLabel}" />
+            <Text />
+            <Label text="{i18n>blockedForPlanningLabel}" />
+            <Text />
 
-            <core:Title text="Bloqueo en Sociedad" />
-            <Label text="Bloqueo para Contabilidad" />
-            <Text text="Sí" />
+            <core:Title text="{i18n>companyCodeBlockTitle}" />
+            <Label text="{i18n>companyCodePostingBlockLabel}" />
+            <Text />
 
-            <core:Title text="Información Adicional" />
-            <Label text="Motivo de Bloqueo" />
-            <Text text="Se va a Bloquear por Algun Motivo." />
+            <core:Title text="{i18n>additionalInformationTitle}" />
+            <Label text="{i18n>blockReasonLabel}" />
+            <Text />
         </f:content>
     </f:SimpleForm>
 </core:FragmentDefinition>

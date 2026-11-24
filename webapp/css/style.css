@@ -1,1 +1,13 @@
-/* Enter your custom styles here */
+#sapUiBusyIndicator,
+#sapUiBusyIndicator .sapUiLocalBusyIndicator,
+#sapUiBusyIndicator .sapUiLocalBusyIndicatorAnimation,
+#sapUiBusyIndicator .sapUiLocalBusyIndicatorAnimation::before,
+#sapUiBusyIndicator .sapUiLocalBusyIndicatorAnimation::after {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+#sap-ui-blocklayer-popup.sapUiBlyBusy {
+    background: transparent;
+}

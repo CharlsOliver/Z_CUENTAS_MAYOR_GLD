@@ -3,19 +3,19 @@
     <Panel width="auto" class="sapUiResponsiveMargin">
         <headerToolbar>
             <OverflowToolbar>
-                <Title text="Opciones"/>
+                <Title text="{i18n>optionsTitle}"/>
                 <ToolbarSpacer/>
-                <Button id="btnEdit" icon="sap-icon://edit" type="Transparent" press=".onEditPress"/>
+                <Button id="btnEdit" icon="sap-icon://edit" tooltip="{i18n>editButton}" type="Transparent" press=".onEditPress"/>
             </OverflowToolbar>
         </headerToolbar>
         <content>
-            <RadioButtonGroup columns="5" selectedIndex="0" select=".onOptionSelect">
+            <RadioButtonGroup id="operationOptions" columns="5" selectedIndex="0" select=".onOptionSelect">
                 <buttons>
-                    <RadioButton text="Alta de Cuenta" class='sapUiMediumMarginEnd'/>
-                    <RadioButton text="Alta de Cuentas de Banco" class='sapUiMediumMarginEnd'/>
-                    <RadioButton text="Modificación de Cuenta" class='sapUiMediumMarginEnd'/>
-                    <RadioButton text="Bloqueo de Cuenta" class='sapUiMediumMarginEnd'/>
-                    <RadioButton text="Extensión de Cuenta" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="{i18n>createAccountOption}" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="{i18n>createBankAccountOption}" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="{i18n>changeAccountOption}" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="{i18n>blockAccountOption}" class='sapUiMediumMarginEnd'/>
+                    <RadioButton text="{i18n>extendAccountOption}" class='sapUiMediumMarginEnd'/>
                 </buttons>
             </RadioButtonGroup>
         </content>

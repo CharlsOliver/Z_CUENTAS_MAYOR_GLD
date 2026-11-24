@@ -8,7 +8,7 @@
         editable="false"
         width="auto"
         class="sapUiResponsiveMargin"
-        title="Datos de Control"
+        title="{i18n>controlDataTitle}"
         labelSpanXL="4"
         labelSpanL="6"
         labelSpanM="6"
@@ -29,40 +29,40 @@
             <!-- ========================= -->
 
             <Toolbar>
-                <Title text="Control de Cuenta en Sociedad"/>
+                <Title text="{i18n>companyCodeControlTitle}"/>
             </Toolbar>
 
-            <Label text="Moneda de la Cuenta"/>
-            <Text text="MXN - Pesos" />
+            <Label text="{i18n>accountCurrencyLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/WAERS', {path: 'descripcionesCatalogo>/15', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Saldos en Moneda Local"/>
-            <Text text="Sí" />
+            <Label text="{i18n>localCurrencyBalanceLabel}"/>
+            <CheckBox selected="{CuentaMayorData>/XSALH}" editable="false"/>
 
-            <Label text="Categoría Fiscal"/>
-            <Text text="Impuestos" />
+            <Label text="{i18n>taxCategoryLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/MWSKZ', {path: 'descripcionesCatalogo>/16', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Permitir Contab. Sin IVA"/>
-            <Text text="No" />
+            <Label text="{i18n>postingWithoutTaxLabel}"/>
+            <CheckBox selected="{CuentaMayorData>/XMWNO}" editable="false"/>
 
-            <Label text="Cta. Asociada p/Clas Cta"/>
-            <Text text="D - Deudores" />
+            <Label text="{i18n>reconciliationAccountLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/MITKZ', {path: 'descripcionesCatalogo>/17', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
             <!-- ========================= -->
             <!-- Gestión de Cuenta -->
             <!-- ========================= -->
 
             <Toolbar>
-                <Title text="Gestión de Cta en Sociedad"/>
+                <Title text="{i18n>companyCodeManagementTitle}"/>
             </Toolbar>
 
-            <Label text="Gestión Partidas Abiertas"/>
-            <Text text="Sí" />
+            <Label text="{i18n>openItemManagementLabel}"/>
+            <CheckBox selected="{CuentaMayorData>/XOPVW}" editable="false"/>
 
-            <Label text="Visualización Partidas Indiv."/>
-            <Text text="Sí" />
+            <Label text="{i18n>lineItemDisplayLabel}"/>
+            <CheckBox selected="{CuentaMayorData>/XKRES}" editable="false"/>
 
-            <Label text="Clave Clasificación"/>
-            <Text text="001 - Posting Date" />
+            <Label text="{i18n>sortKeyLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/ZUAWA', {path: 'descripcionesCatalogo>/18', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
         </f:content>
     </f:SimpleForm>
 </core:FragmentDefinition>

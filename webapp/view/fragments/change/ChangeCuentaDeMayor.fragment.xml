@@ -6,13 +6,14 @@
             width="auto"
             class="sapUiResponsiveMargin"
 			layout="ColumnLayout"
-			title="Cuenta de Mayor" >
+			title="{i18n>accountTitle}" >
 			<f:content>
-				<Label text="No. de Cuenta" />
+				<Label text="{i18n>accountNumberLabel}" />
 				<Input
 					id="inputCuentaMayor"
 					width="auto"
 					showValueHelp="true"
+					liveChange=".onEditSelectionLiveChange"
 					valueHelpRequest=".onCatalogoValueHelp">
 					<customData>
 						<core:CustomData key="catalogo" value="7"/>
@@ -20,11 +21,12 @@
 					</customData>
 				</Input>
 
-				<Label text="Sociedad" />
+				<Label text="{i18n>companyCodeLabel}" />
 				<Input
 					id="inputSociedad"
 					width="auto"
 					showValueHelp="true"
+					liveChange=".onEditSelectionLiveChange"
 					valueHelpRequest=".onCatalogoValueHelp">
 					<customData>
 						<core:CustomData key="catalogo" value="8"/>
@@ -32,10 +34,10 @@
 					</customData>
 				</Input>
 
-				<Label text="Texto Breve" />
+				<Label text="{i18n>shortTextLabel}" />
 				<Input value="{CuentaMayorData>/TXT20}"/>
 
-				<Label text="Texto Explicativo" />
+				<Label text="{i18n>longTextLabel}" />
 				<Input value="{CuentaMayorData>/TXT50}"/>
 			</f:content>
 		</f:SimpleForm>

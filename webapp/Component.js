@@ -32,6 +32,11 @@ sap.ui.define([
 
             this.setModel(oSAPUserModel, "SAPUser");
 
+            const oStandaloneContainer = document.getElementById("container");
+            if (oStandaloneContainer?.getAttribute("data-name") === this.getManifestEntry("sap.app").id) {
+                document.title = this.getModel("i18n").getResourceBundle().getText("appTitle");
+            }
+
             // Inicializar navegación
             this.getRouter().initialize();
 

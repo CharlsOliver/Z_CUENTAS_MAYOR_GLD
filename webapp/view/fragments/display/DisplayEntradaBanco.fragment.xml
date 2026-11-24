@@ -9,7 +9,7 @@
         editable="false"
         class="sapUiResponsiveMargin"
         layout="ResponsiveGridLayout"
-        title="Entrada Banco/Inter."
+        title="{i18n>bankDataTitle}"
         labelSpanXL="4"
         labelSpanL="5"
         labelSpanM="5"
@@ -29,40 +29,40 @@
             <!-- ===================================== -->
 
             <Toolbar>
-                <Title text="Control De Entrada de Doc en Sociedad"/>
+                <Title text="{i18n>documentEntryTitle}"/>
             </Toolbar>
 
-            <Label text="Grupo Estatus Campos"/>
-            <Text text="G001 -Generales (con texto, asignación)" />
+            <Label text="{i18n>fieldStatusGroupLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/FSTAG', {path: 'descripcionesCatalogo>/19', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Solo Contab.Automaticamente"/>
-            <Text text="Sí" />
+            <Label text="{i18n>automaticPostingLabel}"/>
+            <CheckBox selected="{CuentaMayorData>/XINTB}" editable="false"/>
 
             <!-- =========================== -->
             <!-- Datos Bancarios/Financieros -->
             <!-- =========================== -->
 
             <Toolbar>
-                <Title text="Datos Bancarios/Financieros"/>
+                <Title text="{i18n>financialDataTitle}"/>
             </Toolbar>
 
-            <Label text="Nivel de Tesoreria"/>
-            <Text text="A4 - Traspasos Bancarios" />
+            <Label text="{i18n>planningLevelLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/FDLEV', {path: 'descripcionesCatalogo>/20', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Relevante Mov.Caja"/>
-            <Text text="Sí" />
+            <Label text="{i18n>cashFlowRelevantLabel}"/>
+            <Text />
 
-            <Label text="Pos. Presupuestaria"/>
-            <Text text="BANCOS - Bancos" />
+            <Label text="{i18n>commitmentItemLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/FIPOS', {path: 'descripcionesCatalogo>/21', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Banco Propio"/>
-            <Text text="BBV01" />
+            <Label text="{i18n>houseBankLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/HBKID', {path: 'descripcionesCatalogo>/22', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Id de Banco Propio"/>
-            <Text text="96468 - BBVA Bancomer MXN Intercarnes SA de CV  96468" />
+            <Label text="{i18n>houseBankAccountIdLabel}"/>
+            <Text text="{parts: ['CuentaMayorData>/HKTID', {path: 'descripcionesCatalogo>/23', targetType: 'any'}], formatter: '.formatDescripcionCatalogo'}"/>
 
-            <Label text="Cuenta Bancaria"/>
-            <Text text="1100078195" />
+            <Label text="{i18n>bankAccountLabel}"/>
+            <Text />
         </f:content>
     </f:SimpleForm>
 </core:FragmentDefinition>

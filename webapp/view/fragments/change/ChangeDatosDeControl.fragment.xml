@@ -3,7 +3,7 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
 
-    <f:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ColumnLayout" title="Datos de Control">
+    <f:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ColumnLayout" title="{i18n>controlDataTitle}">
 
         <f:content>
             <!-- ========================= -->
@@ -11,10 +11,10 @@
             <!-- ========================= -->
 
             <Toolbar>
-                <Title text="Control de Cuenta en Sociedad"/>
+                <Title text="{i18n>companyCodeControlTitle}"/>
             </Toolbar>
 
-            <Label text="Moneda de la Cuenta"/>
+            <Label text="{i18n>accountCurrencyLabel}"/>
             <Input id="inputMonedaCuenta"
                 value="{parts: ['CuentaMayorData>/WAERS', {path: 'descripcionesCatalogo>/15', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -26,10 +26,10 @@
                 </customData>
             </Input>
 
-            <Label text="Saldos en Moneda Local"/>
+            <Label text="{i18n>localCurrencyBalanceLabel}"/>
             <CheckBox selected="{CuentaMayorData>/XSALH}"/>
 
-            <Label text="Categoría Fiscal"/>
+            <Label text="{i18n>taxCategoryLabel}"/>
             <Input id="inputCategoriaFiscal"
                 value="{parts: ['CuentaMayorData>/MWSKZ', {path: 'descripcionesCatalogo>/16', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -41,10 +41,10 @@
                 </customData>
             </Input>
 
-            <Label text="Permitir Contab. Sin IVA"/>
+            <Label text="{i18n>postingWithoutTaxLabel}"/>
             <CheckBox selected="{CuentaMayorData>/XMWNO}"/>
 
-            <Label text="Cta. Asociada p/Clas Cta"/>
+            <Label text="{i18n>reconciliationAccountLabel}"/>
             <Input id="inputCtaAsociadaClasCta"
                 value="{parts: ['CuentaMayorData>/MITKZ', {path: 'descripcionesCatalogo>/17', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -61,16 +61,16 @@
             <!-- ========================= -->
 
             <Toolbar>
-                <Title text="Gestión de Cta en Sociedad"/>
+                <Title text="{i18n>companyCodeManagementTitle}"/>
             </Toolbar>
 
-            <Label text="Gestión Partidas Abiertas"/>
+            <Label text="{i18n>openItemManagementLabel}"/>
             <CheckBox selected="{CuentaMayorData>/XOPVW}"/>
 
-            <Label text="Visualización Partidas Indiv."/>
+            <Label text="{i18n>lineItemDisplayLabel}"/>
             <CheckBox selected="{CuentaMayorData>/XKRES}"/>
 
-            <Label text="Clave Clasificación"/>
+            <Label text="{i18n>sortKeyLabel}"/>
             <Input id="inputClaveClasificacion"
                 value="{parts: ['CuentaMayorData>/ZUAWA', {path: 'descripcionesCatalogo>/18', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"

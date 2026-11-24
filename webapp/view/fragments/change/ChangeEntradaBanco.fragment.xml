@@ -3,7 +3,7 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
 
-    <f:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ColumnLayout" title="Entrada Banco/Inter.">
+    <f:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ColumnLayout" title="{i18n>bankDataTitle}">
 
         <f:content>
             <!-- ===================================== -->
@@ -11,10 +11,10 @@
             <!-- ===================================== -->
 
             <Toolbar>
-                <Title text="Control De Entrada de Doc en Sociedad"/>
+                <Title text="{i18n>documentEntryTitle}"/>
             </Toolbar>
 
-            <Label text="Grupo Estatus Campos"/>
+            <Label text="{i18n>fieldStatusGroupLabel}"/>
             <Input id="inputGrupoEstatusCampos"
                 value="{parts: ['CuentaMayorData>/FSTAG', {path: 'descripcionesCatalogo>/19', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -26,7 +26,7 @@
                 </customData>
             </Input>
 
-            <Label text="Solo Contab.Automaticamente"/>
+            <Label text="{i18n>automaticPostingLabel}"/>
             <CheckBox selected="{CuentaMayorData>/XINTB}"/>
 
             <!-- =========================== -->
@@ -34,10 +34,10 @@
             <!-- =========================== -->
 
             <Toolbar>
-                <Title text="Datos Bancarios/Financieros"/>
+                <Title text="{i18n>financialDataTitle}"/>
             </Toolbar>
 
-            <Label text="Nivel de Tesoreria"/>
+            <Label text="{i18n>planningLevelLabel}"/>
             <Input id="inputNivelTesoreria"
                 value="{parts: ['CuentaMayorData>/FDLEV', {path: 'descripcionesCatalogo>/20', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -49,10 +49,10 @@
                 </customData>
             </Input>
 
-            <Label text="Relevante Mov.Caja"/>
+            <Label text="{i18n>cashFlowRelevantLabel}"/>
             <CheckBox/>
 
-            <Label text="Pos. Presupuestaria"/>
+            <Label text="{i18n>commitmentItemLabel}"/>
             <Input id="inputPosPresupuestaria"
                 value="{parts: ['CuentaMayorData>/FIPOS', {path: 'descripcionesCatalogo>/21', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -64,7 +64,7 @@
                 </customData>
             </Input>
 
-            <Label text="Banco Propio"/>
+            <Label text="{i18n>houseBankLabel}"/>
             <Input id="inputBancoPropio"
                 value="{parts: ['CuentaMayorData>/HBKID', {path: 'descripcionesCatalogo>/22', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -76,7 +76,7 @@
                 </customData>
             </Input>
 
-            <Label text="Id de Banco Propio"/>
+            <Label text="{i18n>houseBankAccountIdLabel}"/>
             <Input id="inputIdBancoPropio"
                 value="{parts: ['CuentaMayorData>/HKTID', {path: 'descripcionesCatalogo>/23', targetType: 'any'}], formatter: '.formatCatalogo'}"
                 change=".onCampoCatalogoChange"
@@ -88,7 +88,7 @@
                 </customData>
             </Input>
 
-            <Label text="Cuenta Bancaria"/>
+            <Label text="{i18n>bankAccountLabel}"/>
             <Input/>
         </f:content>
 

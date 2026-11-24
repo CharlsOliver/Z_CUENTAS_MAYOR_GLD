@@ -7,7 +7,7 @@
 			width="auto"
 			layout="ResponsiveGridLayout"
             class="sapUiResponsiveMargin"
-			title="Con Modelo de Cuenta de Mayor"
+			title="{i18n>referenceAccountTitle}"
 			labelSpanXL="3"
 			labelSpanL="3"
 			labelSpanM="3"
@@ -22,7 +22,7 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			<f:content>
-				<Label text="No. de Cuenta" />
+				<Label text="{i18n>accountNumberLabel}" />
 				<Input
 					id="inputCuentaMayorModelo"
 					width="auto"
@@ -35,7 +35,7 @@
 					</customData>
 				</Input>
 
-				<Label text="Sociedad" />
+				<Label text="{i18n>companyCodeLabel}" />
 				<Input
 					id="inputSociedadModelo"
 					width="auto"

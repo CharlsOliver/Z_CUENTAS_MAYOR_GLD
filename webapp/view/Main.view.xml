@@ -2,7 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="{i18n>appTitle}">
         <content>
             <core:Fragment fragmentName="zcuentasmayorgld.view.fragments.Options" type="XML"/>
 
@@ -58,11 +58,11 @@
             <OverflowToolbar id="otbFooter">
                 <ToolbarSpacer/>
 
-                <Button id="btnCreate" type="Accept" text="Crear"/>
+                <Button id="btnCreate" type="Accept" text="{i18n>createButton}"/>
 
-                <Button id="btnSave" type="Accept" text="Guardar" press=".onSavePress"/>
+                <Button id="btnSave" type="Accept" text="{i18n>saveButton}" press=".onSavePress"/>
 
-                <Button id="btnCancel" type="Reject" text="Cancelar" press=".onCancelPress"/>
+                <Button id="btnCancel" type="Reject" text="{i18n>cancelButton}" press=".onCancelPress"/>
 
             </OverflowToolbar>
         </footer>

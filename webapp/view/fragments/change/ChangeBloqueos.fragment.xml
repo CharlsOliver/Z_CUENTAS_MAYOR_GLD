@@ -8,7 +8,7 @@
         editable="false"
         layout="ResponsiveGridLayout"
         class="sapUiResponsiveMargin"
-        title="Bloqueos"
+        title="{i18n>blocksTitle}"
         labelSpanXL="6"
         labelSpanL="6"
         labelSpanM="4"
@@ -23,20 +23,20 @@
         columnsM="2"
         singleContainerFullSize="false" >
         <f:content>
-            <core:Title text="Bloquear" />
-            <Label text="Bloqueada para Creacion" />
+            <core:Title text="{i18n>blockTitle}" />
+            <Label text="{i18n>blockedForCreationLabel}" />
             <CheckBox/>
-            <Label text="Bloqueada para Contabilizacion" />
+            <Label text="{i18n>blockedForPostingLabel}" />
             <CheckBox/>
-            <Label text="Bloqueada para Planificacion" />
-            <CheckBox/>
-
-            <core:Title text="Bloqueo en Sociedad" />
-            <Label text="Bloqueo para Contabilidad" />
+            <Label text="{i18n>blockedForPlanningLabel}" />
             <CheckBox/>
 
-            <core:Title text="Información Adicional" />
-            <Label text="Motivo de Bloqueo" />
+            <core:Title text="{i18n>companyCodeBlockTitle}" />
+            <Label text="{i18n>companyCodePostingBlockLabel}" />
+            <CheckBox/>
+
+            <core:Title text="{i18n>additionalInformationTitle}" />
+            <Label text="{i18n>blockReasonLabel}" />
             <TextArea rows="5"/>
         </f:content>
     </f:SimpleForm>

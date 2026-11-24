@@ -191,23 +191,7 @@
         })
         .finally(function () {
     
-            // setting the app title with internationalization 
-            sap.ui.require(["sap/ui/core/Core"], async function(Core) {
-                Core.ready(() => {
-                   sap.ui.require(["sap/base/i18n/Localization"], function (Localization) {
-                        sap.ui.require(["sap/base/i18n/ResourceBundle"], function (ResourceBundle) {
-                            var oResourceBundle = ResourceBundle.create({
-                                // Patch (KW): resourceRoot is needed to load the correct ResourceBundles
-                                url: resourceRoot + "i18n/i18n.properties",
-                                locale: Localization.getLanguage()
-                            });
-                            document.title = oResourceBundle.getText("appTitle");
-                        });
-                    });
-                });
-            });        
-    
-           if (componentName && componentName.length > 0) {
+            if (componentName && componentName.length > 0) {
                 if (useMockserver && useMockserver === "true") {
                     sap.ui.require(["sap/ui/core/Core"], async function(Core) {
                         Core.ready(() => {
@@ -249,14 +233,27 @@
                 sap.ui.require(["sap/ui/core/Core"], async function(Core) {
                     Core.ready(() => {
                         registerSAPFonts();
-                        // initialize the ushell sandbox component
-                        sap.ui.require(["sap/ushell/Container"], async function (Container) {
-                            try {
-                            Container.createRenderer(true).then(function (component) {
-                                component.placeAt("content");
+                        sap.ui.require(["sap/base/i18n/ResourceBundle", "sap/base/Log"],
+                            function (ResourceBundle, Log) {
+                                ResourceBundle.create({
+                                    url: resourceRoot + "i18n/i18n.properties",
+                                    supportedLocales: ["", "es", "en"],
+                                    fallbackLocale: "",
+                                    async: true
+                                }).then(function (oBundle) {
+                                    document.title = oBundle.getText("appTitle");
+                                }).catch(function (error) {
+                                    Log.error("Could not load the sandbox page title", error.message);
+                                });
                             });
+
+                        sap.ui.require(["sap/ushell/Container"], function (Container) {
+                            try {
+                                Container.createRenderer(true).then(function (component) {
+                                    component.placeAt("content");
+                                });
                             } catch (error) {
-                                // support older versions of ui5 
+                                // Support older versions of UI5.
                                 Container.createRenderer().placeAt("content");
                             }
                         });

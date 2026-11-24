@@ -4,8 +4,8 @@
 
     <SelectDialog
         id="vhCatalogo"
-        title="Seleccione un registro"
-        noDataText="No hay registros"
+        title="{i18n>valueHelpTitle}"
+        noDataText="{i18n>noCatalogRecords}"
         search=".onCatalogoSearch"
         liveChange=".onCatalogoSearch"
         confirm=".onCatalogoConfirm"

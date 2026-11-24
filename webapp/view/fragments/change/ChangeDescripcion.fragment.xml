@@ -6,9 +6,9 @@
             width="auto"
             class="sapUiResponsiveMargin"
 			layout="ColumnLayout"
-			title="Tipo/Descripción" >
+			title="{i18n>accountDescriptionTitle}" >
 			<f:content>
-				<Label text="Grupo de Cuentas" />
+				<Label text="{i18n>accountGroupLabel}" />
 				<Input
 					id="inputGrupoCuentas"
 					value="{parts: ['CuentaMayorData>/KTOKS', {path: 'descripcionesCatalogo>/11', targetType: 'any'}], formatter: '.formatCatalogo'}"
@@ -22,7 +22,7 @@
 					</customData>
 				</Input>
 
-				<Label text="Cta Beneficios / Cta Balance" />
+				<Label text="{i18n>accountTypeLabel}" />
 				<Select
 					id="inputCtaBeneficiosBalance"
 					forceSelection="false"
@@ -42,7 +42,7 @@
 						text="{ZSERV_GLD_SHELP_SRV>Descripcion}"/>
 				</Select>
 
-				<Label text="Sociedad GL Asociada" />
+				<Label text="{i18n>tradingPartnerLabel}" />
 				<Input
 					id="inputSociedadGLAsociada"
 					value="{parts: ['CuentaMayorData>/VBUND', {path: 'descripcionesCatalogo>/13', targetType: 'any'}], formatter: '.formatCatalogo'}"
@@ -56,7 +56,7 @@
 					</customData>
 				</Input>
 
-				<Label text="No.Cuenta de Grupo" />
+				<Label text="{i18n>groupAccountNumberLabel}" />
 				<Input
 					id="inputNumeroCuentaGrupo"
 					value="{parts: ['CuentaMayorData>/BILKT', {path: 'descripcionesCatalogo>/14', targetType: 'any'}], formatter: '.formatCatalogo'}"
