@@ -3,7 +3,7 @@
 QUnit.config.autostart = false;
 
 sap.ui.require([
-	"z_cuentas_mayor_gld/test/unit/AllTests"
+	"zcuentasmayorgld/test/unit/AllTests"
 ], function (Controller) {
 	"use strict";
 	QUnit.start();

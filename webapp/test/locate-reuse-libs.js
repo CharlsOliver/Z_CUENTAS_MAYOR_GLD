@@ -194,17 +194,13 @@
             if (componentName && componentName.length > 0) {
                 if (useMockserver && useMockserver === "true") {
                     sap.ui.require(["sap/ui/core/Core"], async function(Core) {
-                        Core.ready(() => {
+                        Core.attachInit(() => {
                             registerSAPFonts();
                             sap.ui.require([componentName.replace(/\./g, "/") + "/localService/mockserver"], function (server) {
                                 // set up test service for local testing
                                 server.init();
                                 // initialize the ushell sandbox component
-                                sap.ui.require(["sap/ushell/Container"], async function (Container) {
-                                    Container.createRenderer(true).then(function (component) {
-                                        component.placeAt("content");
-                                    });
-                                });
+                                sap.ushell.Container.createRenderer().placeAt("content");
                             });
                         });        
                     });
@@ -214,31 +210,26 @@
     
                     // setting the app title with the i18n text 
                     sap.ui.require(["sap/ui/core/Core"], async function(Core) {
-                        Core.ready(() => {
+                        Core.attachInit(() => {
                             registerSAPFonts();
-                            sap.ui.require(["sap/base/i18n/Localization"], function (Localization) {
-                                sap.ui.require(["sap/base/i18n/ResourceBundle"], function (ResourceBundle) {
-                                    var oResourceBundle = ResourceBundle.create({
-                                        // Patch (KW): resourceRoot is needed to load the correct ResourceBundles
-                                        url: resourceRoot + "i18n/i18n.properties",
-                                        locale: Localization.getLanguage()
-                                    });
-                                    document.title = oResourceBundle.getText("appTitle");
+                            sap.ui.require(["sap/base/i18n/ResourceBundle"], function (ResourceBundle) {
+                                var oResourceBundle = ResourceBundle.create({
+                                    url: resourceRoot + "i18n/i18n.properties",
+                                    locale: Core.getConfiguration().getLanguage()
                                 });
+                                document.title = oResourceBundle.getText("appTitle");
                             });
                         });
                     });        
                 }
             } else {
                 sap.ui.require(["sap/ui/core/Core"], async function(Core) {
-                    Core.ready(() => {
+                    Core.attachInit(() => {
                         registerSAPFonts();
                         sap.ui.require(["sap/base/i18n/ResourceBundle", "sap/base/Log"],
                             function (ResourceBundle, Log) {
                                 ResourceBundle.create({
                                     url: resourceRoot + "i18n/i18n.properties",
-                                    supportedLocales: ["", "es", "en"],
-                                    fallbackLocale: "",
                                     async: true
                                 }).then(function (oBundle) {
                                     document.title = oBundle.getText("appTitle");
@@ -247,16 +238,7 @@
                                 });
                             });
 
-                        sap.ui.require(["sap/ushell/Container"], function (Container) {
-                            try {
-                                Container.createRenderer(true).then(function (component) {
-                                    component.placeAt("content");
-                                });
-                            } catch (error) {
-                                // Support older versions of UI5.
-                                Container.createRenderer().placeAt("content");
-                            }
-                        });
+                        sap.ushell.Container.createRenderer().placeAt("content");
                     });
                 });
             }

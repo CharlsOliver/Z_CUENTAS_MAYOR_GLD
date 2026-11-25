@@ -32,7 +32,7 @@ sap.ui.define([
 
             this.setModel(oSAPUserModel, "SAPUser");
 
-            const oStandaloneContainer = document.getElementById("container");
+            const oStandaloneContainer = document.getElementById("standalone-content");
             if (oStandaloneContainer?.getAttribute("data-name") === this.getManifestEntry("sap.app").id) {
                 document.title = this.getModel("i18n").getResourceBundle().getText("appTitle");
             }

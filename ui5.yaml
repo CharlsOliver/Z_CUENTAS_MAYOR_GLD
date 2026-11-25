@@ -9,16 +9,16 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false
+        ignoreCertErrors: false
         backend:
           - path: /sap
             url: http://svgwdap0.grupobafar.com:8000
             client: "100"
         ui5:
-          path:
-            - /resources
-            - /test-resources
-          url: https://ui5.sap.com/1.150.1
+          paths:
+            - path: /resources
+              url: http://svgwdap0.grupobafar.com:8000
+              pathReplace: /sap/public/bc/ui5_ui5/resources
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

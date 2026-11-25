@@ -1,13 +1,9 @@
 {
-    "_version": "1.65.0",
+    "_version": "1.17.0",
     "sap.app": {
         "id": "zcuentasmayorgld",
         "type": "application",
-        "i18n": {
-            "bundleUrl": "i18n/i18n.properties",
-            "supportedLocales": ["", "es", "en"],
-            "fallbackLocale": ""
-        },
+        "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "0.0.1"
         },
@@ -74,9 +70,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "zcuentasmayorgld.i18n.i18n",
-                    "supportedLocales": ["", "es", "en"],
-                    "fallbackLocale": ""
+                    "bundleName": "zcuentasmayorgld.i18n.i18n"
                 }
             },
             "ZSERV_GLD_CTAGL_SRV": {

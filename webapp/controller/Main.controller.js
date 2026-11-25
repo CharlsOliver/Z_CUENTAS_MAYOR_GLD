@@ -1,13 +1,18 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageBox",
+    "sap/m/Button",
+    "sap/m/Dialog",
+    "sap/m/Text",
+    "sap/m/library",
+    "sap/ui/core/Core",
     "sap/ui/core/Fragment",
     "sap/ui/core/BusyIndicator",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/ui/model/json/JSONModel",
     "sap/base/Log"
-], (Controller, MessageBox, Fragment, BusyIndicator, Filter, FilterOperator, JSONModel, Log) => {
+], (Controller, MessageBox, Button, Dialog, Text, mobileLibrary, Core, Fragment, BusyIndicator, Filter, FilterOperator, JSONModel, Log) => {
     "use strict";
 
     const aCamposCatalogo = [
@@ -62,19 +67,41 @@ sap.ui.define([
                 if (aFields.some((oField) => this._hasAltaFieldValue(oField))) {
                     oOptions.setSelectedIndex(this._iCurrentOperation);
                     const oBundle = this.getView().getModel("i18n").getResourceBundle();
-                    const sStay = oBundle.getText("stayInAccountCreation");
-                    const sLeave = oBundle.getText("leaveAccountCreation");
-                    MessageBox.confirm(oBundle.getText("confirmLeaveAccountCreation"), {
-                        actions: [sStay, sLeave],
-                        emphasizedAction: sStay,
-                        initialFocus: sStay,
-                        onClose: (sAction) => {
-                            if (sAction === sLeave) {
+                    const oMessage = new Text({
+                        text: oBundle.getText("confirmLeaveAccountCreation")
+                    }).addStyleClass("sapMMsgBoxText");
+                    const oStay = new Button({
+                        text: oBundle.getText("stayInAccountCreation"),
+                        type: "Emphasized",
+                        press: () => oDialog.close()
+                    });
+                    let bLeave = false;
+                    const oLeave = new Button({
+                        text: oBundle.getText("leaveAccountCreation"),
+                        press: () => {
+                            bLeave = true;
+                            oDialog.close();
+                        }
+                    });
+                    const oDialog = new Dialog({
+                        type: "Message",
+                        icon: "sap-icon://question-mark",
+                        title: Core.getLibraryResourceBundle("sap.m").getText("MSGBOX_TITLE_CONFIRM"),
+                        initialFocus: oStay,
+                        content: oMessage,
+                        buttons: [oStay, oLeave],
+                        afterClose: () => {
+                            oDialog.destroy();
+                            if (bLeave) {
                                 oOptions.setSelectedIndex(iNextOperation);
                                 this._selectOperation(iNextOperation);
                             }
                         }
-                    });
+                    }).addStyleClass("sapMMessageBoxQuestion");
+                    oDialog.setProperty("role", mobileLibrary.DialogRoleType.AlertDialog);
+                    oDialog.addAriaLabelledBy(oMessage);
+                    this.getView().addDependent(oDialog);
+                    oDialog.open();
                     return;
                 }
             }
@@ -189,8 +216,6 @@ sap.ui.define([
                     name: "zcuentasmayorgld.view.fragments.CatalogoValueHelp",
                     controller: this
                 }).then((oDialog) => {
-                    const oBundle = this.getView().getModel("i18n").getResourceBundle();
-                    oDialog.setSearchPlaceholder?.(oBundle.getText("searchPlaceholder"));
                     this.getView().addDependent(oDialog);
                     return oDialog;
                 });
@@ -367,7 +392,7 @@ sap.ui.define([
         _buscarDescripcionCatalogo: function (sCatalogo, sCodigo) {
             const sPath = "/" + sCatalogo;
             const sClave = sCatalogo + "/" + sCodigo;
-            if (!sCodigo || Object.hasOwn(this._oDescripcionesCatalogo.getProperty(sPath) ?? {}, "#" + sCodigo) ||
+            if (!sCodigo || Object.prototype.hasOwnProperty.call(this._oDescripcionesCatalogo.getProperty(sPath) ?? {}, "#" + sCodigo) ||
                 this._oConsultasCatalogoPendientes.has(sClave)) {
                 return;
             }
@@ -391,7 +416,7 @@ sap.ui.define([
                         Campo === sCatalogo && Valor === sCodigo);
                     if (oRegistro) {
                         this._cacheDescripcionesCatalogo([oRegistro]);
-                    } else if (!Object.hasOwn(this._oDescripcionesCatalogo.getProperty(sPath) ?? {}, "#" + sCodigo)) {
+                    } else if (!Object.prototype.hasOwnProperty.call(this._oDescripcionesCatalogo.getProperty(sPath) ?? {}, "#" + sCodigo)) {
                         this._cacheDescripcionesCatalogo([{ Campo: sCatalogo, Valor: sCodigo }]);
                     }
                     this._updateGlobalBusy();

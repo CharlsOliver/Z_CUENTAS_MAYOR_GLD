@@ -4,16 +4,21 @@ specVersion: "3.1"
 metadata:
   name: zcuentasmayorgld
 type: application
-framework:
-  name: SAPUI5
-  version: 1.150.1
-  libraries:
-    - name: sap.m
-    - name: sap.ui.core
-    - name: sap.ushell
-    - name: themelib_sap_horizon
 server:
   customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertErrors: false
+        backend:
+          - path: /sap
+            url: http://svgwdap0.grupobafar.com:8000
+            client: "100"
+        ui5:
+          paths:
+            - path: /resources
+              url: http://svgwdap0.grupobafar.com:8000
+              pathReplace: /sap/public/bc/ui5_ui5/resources
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -25,12 +30,3 @@ server:
       configuration:
         component: zcuentasmayorgld
         ui5Theme: sap_fiori_3
-    - name: fiori-tools-proxy
-      afterMiddleware: compression
-      configuration:
-        debug: false
-        ignoreCertError: false
-        backend:
-          - path: /sap
-            url: http://svgwdap0.grupobafar.com:8000/
-            client: "100"
